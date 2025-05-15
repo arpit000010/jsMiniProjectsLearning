@@ -1,0 +1,150 @@
+/* styles.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #1e1e2f, #121212);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Floating clouds animation background */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -100px;
+    width: 200%;
+    height: 200%;
+    background: url('https://i.ibb.co/jgphKHx/clouds.png') repeat-x;
+    opacity: 0.05;
+    animation: moveClouds 60s linear infinite;
+    z-index: 0;
+}
+
+@keyframes moveClouds {
+    0% { background-position-x: 0; }
+    100% { background-position-x: -1000px; }
+}
+
+.container {
+    position: relative;
+    background-color: #2a2a40;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    z-index: 1;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #f1f1f1;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    background-color: #3a3a55;
+    border: 1px solid #555;
+    border-radius: 8px;
+    color: #FFF;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #BB86FC;
+    box-shadow: 0 0 8px 2px rgba(187, 134, 252, 0.5);
+    outline: none;
+}
+
+button {
+    width: 30%;
+    padding: 12px;
+    background-color: #BB86FC;
+    border: none;
+    border-radius: 8px;
+    color: #121212;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    animation: pulse 2s infinite;
+}
+
+button:hover {
+    background-color: #9f6dfc;
+    transform: scale(1.05);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(187, 134, 252, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(187, 134, 252, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(187, 134, 252, 0); }
+}
+
+#weather-info {
+    margin-top: 25px;
+    background-color: #3a3a55;
+    padding: 20px;
+    border-radius: 10px;
+    transition: opacity 0.3s, transform 0.3s;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#weather-info h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#weather-info p {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#error-message {
+    color: #FF6D6D;
+    margin-top: 20px;
+    font-size: 15px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
