@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #dff3ff, #e9e4ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #2c3e50;
+  padding: 20px;
+  background-image: url('https://www.transparenttextures.com/patterns/diamond-upholstery.png');
+}
+
+.container {
+  width: 420px;
+  padding: 30px 25px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="number"] {
+  flex: 1;
+  min-width: 45%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  color: #374151;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+button {
+  flex: 1 1 100%;
+  padding: 12px;
+  background-color: #7c3aed;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5b21b6;
+}
+
+#expense-list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+#expense-list li {
+  background-color: #f3f4f6;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 5px solid #7c3aed;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #1f2937;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#expense-list button {
+  background-color: #ef4444;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#expense-list button:hover {
+  background-color: #dc2626;
+}
+
+#total {
+  text-align: right;
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 16px;
+}
+
+.hidden {
+  display: none;
+}
